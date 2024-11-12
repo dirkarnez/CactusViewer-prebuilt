@@ -15,7 +15,6 @@ jobs:
       libraryName: CactusViewer
       tagName: master-2.0
     steps:
-    
       - uses: actions/checkout@v4
         with:
           repository: Wassimulator/CactusViewer
@@ -23,6 +22,8 @@ jobs:
           path: ${{ env.libraryName }}
           submodules: true
           
+      - uses: seanmiddleditch/gha-setup-vsdevenv@master
+      
       - working-directory: ${{ env.libraryName }}
         shell: cmd
         run: b.bat release 
